@@ -8,7 +8,7 @@
 
 ## Running the application 
 
-` bundle exec rackup config.ru `
+## ` bundle exec rackup config.ru `
 
 
 
