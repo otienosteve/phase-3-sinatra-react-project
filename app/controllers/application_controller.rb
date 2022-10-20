@@ -61,7 +61,7 @@ class ApplicationController < Sinatra::Base
   depts.save
   depts.to_json
   end
-  
+  # edit department
   patch '/department/:id' do
     dept = Department.find(params[:id])
     dept.update(params)
