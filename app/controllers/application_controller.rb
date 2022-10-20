@@ -67,5 +67,11 @@ class ApplicationController < Sinatra::Base
     dept.update(params)
     dept.to_json
   end
+  #delete 
+  delete '/dptremove/:id' do 
+    dept = Department.find(params[:id])
+    dept.destroy 
+    dept.to_json
+  end
  
 end
