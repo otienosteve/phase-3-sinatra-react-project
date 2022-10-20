@@ -20,23 +20,27 @@ class ApplicationController < Sinatra::Base
 
   # single employee
   get '/employee/:id' do 
-    { message: "specific employee" }.to_json
+    emp=Employee.where(id:params[:id])
+    emp.to_json
   end
 
   # departments
   get '/departments' do
-    { message: "departments " }.to_json
+    depts=Department.all
+    depts.to_json
 
   end
   #specific department
   post '/departments/:id' do
-    { message: "specific department" }.to_json
-
+  depts=Department.where(id:params[:id])
+  depts.to_json
   end
 
   #fire employee
   delete '/employee/:id' do 
-    { message: "specific department" }.to_json
+    emp = Employee.find(params[:id])
+    emp.destroy 
+    emp.to_json
   end
 
 end

@@ -1,8 +1,8 @@
 class Employees < ApplicationController
-def all
-
-    Employee.all
-end
-
+    post '/newemployee' do
+        detail = Employee.new(params)
+        detail.save
+        detail.to_json
+      end
 
 end
