@@ -90,7 +90,7 @@ class ApplicationController < Sinatra::Base
     task.to_json
   end
    # single employee
-   get '/task/:id' do 
+   get '/tasks/:id' do 
     tsk=Task.where(id:params[:id])
     tsk.to_json
   end
@@ -101,7 +101,7 @@ class ApplicationController < Sinatra::Base
     tsk.to_json
   end
 #edit single task
-  patch '/task/:id' do
+  patch '/tasks/:id' do
     tsk = Task.find(params[:id])
     tsk.update(params)
     tsk.to_json
