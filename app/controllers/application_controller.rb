@@ -83,11 +83,12 @@ class ApplicationController < Sinatra::Base
     tsk.save
     tsk.to_json
   end
-  # patch '/task/:id' do
-  #   tsk = Task.find(params[:id])
-  #   tsk.update(params)
-  #   tsk.to_json
-  # end
+
+  patch '/task/:id' do
+    tsk = Task.find(params[:id])
+    tsk.update(params)
+    tsk.to_json
+  end
 
 
 end
