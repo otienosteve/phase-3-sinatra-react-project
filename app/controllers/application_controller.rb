@@ -55,11 +55,17 @@ class ApplicationController < Sinatra::Base
     depts.to_json
 
   end
-  #specific department
-  post '/departments/:id' do
-  depts=Department.where(id:params[:id])
+  #add  department
+  post '/departments' do
+  depts=Department.new(params)
+  depts.save
   depts.to_json
   end
-  # add employee
+  
+  patch '/department/:id' do
+    dept = Department.find(params[:id])
+    dept.update(params)
+    dept.to_json
+  end
  
 end
