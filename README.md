@@ -21,7 +21,7 @@
  designation :string 
  ```
 
- ## Task
+ ## Tasks
 
  ``` 
 "title": string
@@ -36,6 +36,15 @@
 "employee_no" :integer 
 ```
 
+## The above schemas support the following HTTP Verbs
+
+``` 
+GET  schemaname (departments)
+GET  schemaname/id (departments)
+POST schemaname (departments)
+PATCH schemaname/id (departments)
+DELETE schemaname (departments)
+```
 
 
 
