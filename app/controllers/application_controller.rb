@@ -19,13 +19,33 @@ class ApplicationController < Sinatra::Base
   end
 
   # single employee
-  get '/employee/:id' do 
+  get '/employees/:id' do 
     emp=Employee.where(id:params[:id])
     emp.to_json
   end
 
-  # departments
-  get '/departments' do
+  post '/newemployee' do
+    # binding.pry
+    detail = Employee.new(params)
+    detail.save
+    detail.to_json
+  end
+ 
+  #edit employee
+    patch '/remove/:id' do 
+    emp = Employee.find(params[:id])
+    emp.destroy 
+    emp.to_json
+   end
+
+    #fire employee
+  delete '/remove/:id' do 
+    emp = Employee.find(params[:id])
+    emp.destroy 
+    emp.to_json
+  end
+   # departments
+   get '/departments' do
     depts=Department.all
     depts.to_json
 
@@ -35,12 +55,6 @@ class ApplicationController < Sinatra::Base
   depts=Department.where(id:params[:id])
   depts.to_json
   end
-
-  #fire employee
-  delete '/employee/:id' do 
-    emp = Employee.find(params[:id])
-    emp.destroy 
-    emp.to_json
-  end
-
+  # add employee
+ 
 end
