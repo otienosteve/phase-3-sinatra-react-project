@@ -12,16 +12,31 @@
 
 ## Model Schemas
 ## Employee
- `f_name : string,
+
+ ```
+ f_name : string,
  l_name : string,
  salary :string,
  age :integer,
- designation :string`
+ designation :string 
+ ```
 
  ## Task
- ` "title": string
-   "description" :string
-   "completed" :string `
+
+ ``` 
+"title": string
+"description" :string
+"completed" :boolean 
+  ```
+  ## Departments
+
+``` 
+"head" :string
+"name" :string
+"employee_no" :integer 
+```
+
+
 
 
 
