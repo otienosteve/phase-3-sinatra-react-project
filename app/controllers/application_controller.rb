@@ -73,5 +73,21 @@ class ApplicationController < Sinatra::Base
     dept.destroy 
     dept.to_json
   end
- 
+  get '/tasks' do
+    tsk=Task.all
+    tsk.to_json
+
+  end
+  # post '/tasks' do
+  #   tsk=Task.new(params)
+  #   tsk.save
+  #   tsk.to_json
+  # end
+  # patch '/task/:id' do
+  #   tsk = Task.find(params[:id])
+  #   tsk.update(params)
+  #   tsk.to_json
+  # end
+
+
 end
