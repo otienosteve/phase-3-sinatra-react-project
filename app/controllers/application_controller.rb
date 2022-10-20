@@ -55,6 +55,11 @@ class ApplicationController < Sinatra::Base
     depts.to_json
 
   end
+   # single department
+   get '/employees/:id' do 
+    depts=Department.where(id:params[:id])
+    depts.to_json
+  end
   #add  department
   post '/departments' do
   depts=Department.new(params)
@@ -78,6 +83,11 @@ class ApplicationController < Sinatra::Base
     tsk=Task.all
     tsk.to_json
 
+  end
+   # single employee
+   get '/task/:id' do 
+    tsk=Task.where(id:params[:id])
+    tsk.to_json
   end
   #add new task
   post '/tasks' do
