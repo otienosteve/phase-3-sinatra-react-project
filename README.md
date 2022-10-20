@@ -10,5 +10,18 @@
 
 ## ` bundle exec rackup config.ru `
 
+## Model Schemas
+## Employee
+ `f_name : string,
+ l_name : string,
+ salary :string,
+ age :integer,
+ designation :string`
+
+ ## Task
+ ` "title": string
+   "description" :string
+   "completed" :string `
+
 
 
