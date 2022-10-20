@@ -44,6 +44,11 @@ class ApplicationController < Sinatra::Base
     emp.destroy 
     emp.to_json
   end
+  patch '/employee/:id' do
+    emp = Employee.find(params[:id])
+    emp.update(params)
+    emp.to_json
+  end
    # departments
    get '/departments' do
     depts=Department.all
