@@ -84,6 +84,11 @@ class ApplicationController < Sinatra::Base
     tsk.to_json
 
   end
+   # single task
+   get '/task/:id' do 
+    task=Task.where(id:params[:id])
+    task.to_json
+  end
    # single employee
    get '/task/:id' do 
     tsk=Task.where(id:params[:id])
